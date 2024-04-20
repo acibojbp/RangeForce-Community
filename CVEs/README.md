@@ -11,11 +11,11 @@ _All information presented in this repository is sourced from the respective cou
 
 ## Contents
 
-CVE Overview
-CVE-2023-38831 WinRAR - Arbitrary Code Execution
-CVE-2023-36884 Windows Search - Remote Code Execution
-CVE-2021-44228 Log4Shell
-CVE-2021-34527 PrintNightmare
-Conti Detection and Response
-REvil Detection and Response
+CVE Overview  
+CVE-2023-38831 WinRAR - Arbitrary Code Execution  
+CVE-2023-36884 Windows Search - Remote Code Execution  
+CVE-2021-44228 Log4Shell  
+CVE-2021-34527 PrintNightmare  
+Conti Detection and Response  
+REvil Detection and Response  
 
