@@ -4,6 +4,11 @@ CVE stands for Common Vulnerabilities and Exposures. It is a list of publicly kn
 
 In this module, you will learn precisely how CVEs and CVSS works and how to find out when a CVE related to your project is published.
 
+## Contents
+- [What are CVEs](#what-are-cves)
+- [CVE Severity Score](#cve-severity-score)
+- [CVE Reporting and Response](#cve-reporting-and-response)
+
 ## What are CVEs
 
 **Common Vulnerabilities and Exposures** is a list of publicly known computer security flaws. Each security flaw receives a unique **CVE ID**. When security professionals talk about a specific CVE, they mention the CVE ID. For example, the infamous **Dirty Cow** security vulnerability is **CVE-2016-5195**.
