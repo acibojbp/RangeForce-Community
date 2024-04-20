@@ -15,6 +15,13 @@ Upon completion of this module, learners will be able to:
 - Understand how the vulnerability is exploited.
 - Know how to mitigate the vulnerability.
 
+## Contents
+- [Campaign and Threat Actor Overview](#campaign-and-threat-actor-overview)
+- [Maldoc Analysis](#maldoc-analysis)
+- [Attack Chain Overview](#attack-chain-overview)
+- [Vulnerability Overview](#vulnerability-overview)
+- [Mitigation & Security Updates](#mitigation--security-updates)
+
 ## Campaign and Threat Actor Overview
 
 On July 11, 2023, **Microsoft** released a [blog post](https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/) and a [security guideline](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36884) about a phishing campaign that involved the abuse of previously undisclosed **CVE-2023-36884**. Microsoft attributed the attack to a threat actor called **Storm-0978** (also known as RomCom) and urged customers to apply the provided interim remediation actions.
