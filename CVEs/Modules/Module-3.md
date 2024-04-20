@@ -4,7 +4,7 @@ On July 11, 2023, Microsoft released a blog post and a security guideline about 
 
 In this module, you will analyze the initial malicious document and examine the attack chain to understand CVE-2023-36884.
 
-CVSS Base Score: 8.8 (HIGH)
+CVSS Base Score: 8.8 (HIGH)  
 CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
 
 Learning outcomes
