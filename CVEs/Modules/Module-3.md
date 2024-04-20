@@ -22,7 +22,7 @@ Upon completion of this module, learners will be able to:
 - [Vulnerability Overview](#vulnerability-overview)
 - [Mitigation & Security Updates](#mitigation--security-updates)
 
-## Campaign and Threat Actor Overview
+## <a name="campaign-and-threat-actor-overview"></a> Campaign and Threat Actor Overview
 
 On July 11, 2023, **Microsoft** released a [blog post](https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/) and a [security guideline](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36884) about a phishing campaign that involved the abuse of previously undisclosed **CVE-2023-36884**. Microsoft attributed the attack to a threat actor called **Storm-0978** (also known as RomCom) and urged customers to apply the provided interim remediation actions.
 
@@ -46,7 +46,7 @@ Small and medium-sized enterprises in Russia
 Organisations in financial and telecom industries around the world  
 Supply chain targets and manufacturers in Europe and North America  
 
-## Maldoc Analysis
+## <a name="maldoc-analysis"></a> Maldoc Analysis
 
 The attack chain starts with a maldoc. Microsoft Office documents, starting with Office 2007 and later versions, use a file format known as **Office Open XML** (OOXML). OOXML files use a structured format based on XML (Extensible Markup Language) to store different elements of an Office document. This format consists of a collection of XML files, the document's content, formatting, metadata, and relationships to other parts of the document within a **ZIP archive**. You can open office documents with a zip utility and examine their contents.
 
@@ -107,7 +107,7 @@ When the end user opens the malicious Word document, the embedded `.rtf` documen
 
 ---
 
-## Attack Chain Overview
+## <a name="attack-chain-overview"></a> Attack Chain Overview
 
 The vulnerability was originally named **Office and Windows HTML Remote Code Execution**. Initially, the precise nature of CVE-2023-36884 was not clear. Consequently, if you search for CVE-2023-36884, you will discover numerous technical articles where the whole attack chain was analyzed and portrayed as CVE-2023-36884. Microsoft later renamed the vulnerability to **Windows Search Remote Code Execution Vulnerability** and specified that the adversary was able to exploit a previously undisclosed vulnerability in **Windows Search** to evade the stamping of the **Mark of the Web (MotW)** tag.
 
@@ -144,7 +144,7 @@ Connection to which file triggers the automated generation of tailored files in 
 Which security measure is evaded by the threat actor with the exploitation of CVE-2023-36884?  
 `Mark of the Web `
 
-## Vulnerability Overview
+## <a name="vulnerability-overview"></a> Vulnerability Overview
 
 The **Mark of the Web (MOTW)** is a concept used in Windows operating systems to indicate that a file downloaded from the internet might be potentially unsafe. It is a security feature implemented by Microsoft to help protect users from potentially malicious files or scripts that could harm their computers. When a file is downloaded from the internet, a **special comment** is automatically added to its **NTFS file metadata** to alert the system that the file came from the web. When you attempt to open or run a file with the MOTW tag, Windows may apply additional security measures, such as running it in a restricted mode, prompting you for permission to execute it, or warning you about potential risks.
 
@@ -169,7 +169,7 @@ The MotW tag is never stamped on files loaded from remote SMB servers.
 Files loaded with search-ms do not get the MotW tag stamped on them by default.  
 
 
-## Mitigation & Security Updates
+## <a name="mitigation-and-security-updates"></a> Mitigation & Security Updates
 
 The vulnerability affected nearly all Windows operating systems and Office versions except for the customers who use **Microsoft Defender for Office 365** or **Microsoft 365 Apps with versions 2302 or higher**. As the interim solution, Microsoft advised customers of the vulnerable Office versions to set the **FEATURE_BLOCK_CROSS_PROTOCOL_FILE_NAVIGATION** registry key to avoid exploitation. This entails editing or creating the `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BLOCK_CROSS_PROTOCOL_FILE_NAVIGATION\` registry key and adding **Office application names** as values of **type REG_DWORD** with **data 1**.
 
