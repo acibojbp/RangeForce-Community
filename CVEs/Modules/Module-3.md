@@ -125,16 +125,16 @@ Below is a simplified chain (less details, misses some steps) derived from the a
 
 - Answer the questions.
 
-In which Windows service is the CVE-2023-36884 vulnerability exploited?
+In which Windows service is the CVE-2023-36884 vulnerability exploited?  
 `Windows Search`
 
-What HTML element does the threat actor predominantly use to load scripts and files in this attack chain?
+What HTML element does the threat actor predominantly use to load scripts and files in this attack chain?  
 `iframe`
 
-Connection to which file triggers the automated generation of tailored files in the adversary's SMB server? (file name)
+Connection to which file triggers the automated generation of tailored files in the adversary's SMB server? (file name)  
 `file001.url`
 
-Which security measure is evaded by the threat actor with the exploitation of CVE-2023-36884?
+Which security measure is evaded by the threat actor with the exploitation of CVE-2023-36884?  
 `Mark of the Web `
 
 ## Vulnerability Overview
@@ -153,13 +153,13 @@ It is worth noting that this method of running the file before the MotW stamping
 
 - Answer the question below.
 
-What are the two main issues that allow the exploitation of the vulnerability?
+**What are the two main issues that allow the exploitation of the vulnerability?**
 
-Executables embedded into Office documents via the AltChunks method do not trigger security measures.
-**There is a long delay between file extraction and MotW application for files loaded with search-ms files.**
-The MotW tag is never stamped on files loaded from remote SMB servers.
-**Archives are extracted in a predictable temporary location.**
-Files loaded with search-ms do not get the MotW tag stamped on them by default.
+Executables embedded into Office documents via the AltChunks method do not trigger security measures.  
+**There is a long delay between file extraction and MotW application for files loaded with search-ms files.**  
+The MotW tag is never stamped on files loaded from remote SMB servers.  
+**Archives are extracted in a predictable temporary location.**  
+Files loaded with search-ms do not get the MotW tag stamped on them by default.  
 
 
 ## Mitigation & Security Updates
@@ -179,8 +179,4 @@ Fortunately, in August, **Microsoft released security updates** for their [opera
 
 These security updates fix the underlying issues that allowed the exploitation of CVE-2023-36884.
 
-> Note: Refer to the relevant Microsoft [operating system](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36884) and [Office](https://msrc.microsoft.com/update-guide/vulnerability/ADV230003) security update guidelines for real-world applications .
-
-
-
-
+> Note: Refer to the relevant Microsoft [operating system](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36884) and [Office](https://msrc.microsoft.com/update-guide/vulnerability/ADV230003) security update guidelines for real-world applications.
