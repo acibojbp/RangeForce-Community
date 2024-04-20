@@ -39,4 +39,65 @@ Small and medium-sized enterprises in Russia
 Organisations in financial and telecom industries around the world  
 Supply chain targets and manufacturers in Europe and North America  
 
+## Maldoc Analysis
+
+The attack chain starts with a maldoc. Microsoft Office documents, starting with Office 2007 and later versions, use a file format known as **Office Open XML** (OOXML). OOXML files use a structured format based on XML (Extensible Markup Language) to store different elements of an Office document. This format consists of a collection of XML files, the document's content, formatting, metadata, and relationships to other parts of the document within a **ZIP archive**. You can open office documents with a zip utility and examine their contents.
+
+Relationships are defined using XML and stored in special `.rels` files. In this attack chain, the adversary has embedded and linked an `.rtf` file into the maldoc with **AltChunks** (aFChunk) relationship type. AltChunks are used to embed content from external files (in this case, an `.rtf` file) into the Word document. The **Target** field specifies the relative path to the target file within the word document's ZIP archive. You can examine the relationship from `word/_rels/document.xml.rels` within the archive.
+
+![Screenshot 2024-04-20 042508](https://github.com/acibojbp/RangeForce-Community/assets/164168280/bae6a7ef-a445-4229-935a-fe1f6ca5e800)
+
+Identify and extract the malicious `.rtf` document for further analysis. The malicious `.rtf` file contains two **OLE objects**. OLE (Object Linking and Embedding) objects in Office documents can be abused by adversaries to deliver malicious content or execute commands. In this case, OLE objects are used to communicate with the hosts controlled by the adversary to start the next stages of the attack chain. OLE objects embedded in the `.rtf` documents can be listed with **rtfobj** ( `rtfobj.exe <mal_document.rtf>` ) from oletools suite.
+
+![Screenshot 2024-04-20 042649](https://github.com/acibojbp/RangeForce-Community/assets/164168280/c0d086f2-dac2-4fff-bbb5-42b1ce80fc80)
+
+You can extract these OLE objects for further analysis with `rtfobj.exe -s all -d . <mal_document.rtf>` :
+
+- `-s all` selects and saves all OLE objects;
+- `-d .` saves them in the current directory.
+Now that the OLE objects are extracted, you can use the **strings** command line tool or **PEStudio**, to examine strings in these objects.
+
+![Screenshot 2024-04-20 052608](https://github.com/acibojbp/RangeForce-Community/assets/164168280/767386bd-8336-4ca6-a714-6aa6199d03d2)
+
+When the end user opens the malicious Word document, the embedded `.rtf` document loads up, and OLE objects execute and load the `file001.url` and `start.xml` files from the adversary-controlled SMB and web servers.
+
+- Extract the Word document (maldoc) from the zip archive:
+	- File: `maldoc.zip`
+	- Password: infected
+- Identify and extract the malicious `.rtf` file from the maldoc.
+- Extract and analyze the OLE objects embedded in the `.rtf` file.
+- Extract URLs from the OLE objects.
+- Answer the questions.
+
+![Screenshot 2024-04-20 042959](https://github.com/acibojbp/RangeForce-Community/assets/164168280/056b27ff-63bc-4cdb-9824-f5c399046dd9)
+
+![Screenshot 2024-04-20 044112](https://github.com/acibojbp/RangeForce-Community/assets/164168280/f8e96724-8926-4b80-adc7-b075c0eeb955)
+
+![Screenshot 2024-04-20 044136](https://github.com/acibojbp/RangeForce-Community/assets/164168280/e2adf381-7018-4a45-93af-7f9aa4d5e8a1)
+
+**What is the name of the `.rtf` file embedded in the maldoc?**  
+`afchunk.rtf`
+
+---
+
+![Screenshot 2024-04-20 044306](https://github.com/acibojbp/RangeForce-Community/assets/164168280/48cdf872-01d7-4248-add4-87f845975475)
+
+![Screenshot 2024-04-20 044429](https://github.com/acibojbp/RangeForce-Community/assets/164168280/0748cac4-20f8-4f67-b2fc-40ff0b3c9359)
+
+![Screenshot 2024-04-20 044459](https://github.com/acibojbp/RangeForce-Community/assets/164168280/7069140e-c218-45e9-8d06-89add1015acb)
+
+![Screenshot 2024-04-20 052039](https://github.com/acibojbp/RangeForce-Community/assets/164168280/6fb550dd-7c82-41bd-b508-3220f7a9087c)
+
+**What is the URL of the file loaded via SMB?**  
+`\\104.234.239.26\share1\MSHTML_C7\file001.url`
+
+---
+
+![Screenshot 2024-04-20 044633](https://github.com/acibojbp/RangeForce-Community/assets/164168280/8608d536-3c19-4361-ac58-cf98f6febfd5)
+
+**What is the URL of the file loaded via HTTP?**  
+`http://74.50.94.156/MSHTML_C7/start.xml`
+
+---
+
 
