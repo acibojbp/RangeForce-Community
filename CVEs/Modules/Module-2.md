@@ -16,6 +16,11 @@ The learner will be able to
 - Understand how the vulnerability is exploited.
 - Know how to mitigate the vulnerability.
 
+## Contents
+- [Vulnerability Overview](#vulnerability-overview)
+- [Examine the Sample](#examine-the-sample)
+
+
 ## Vulnerability Overview
 
 On July 10, 2023, [Group-IB Threat Intelligence](https://www.group-ib.com/blog/cve-2023-38831-winrar-zero-day/) unit discovered a previously undisclosed vulnerability in the processing of the **ZIP** file format by **WinRAR** while researching the spread of **DarkMe** malware. Specially crafted malicious archives were posted on **trading** and **crypto-trading** forums. They were advertised as containing formulas, filters, notes, tool components, etc., for traders to entice them to download and open the archives. Archives contained and delivered various malware families, such as **DarkMe**, **GuLoader** and **Remcos RAT**. The potential end goal was withdrawing funds from the victims' brokerage accounts. (Financial losses are unconfirmed.) Multiple versions of these malicious archives have been discovered by researchers. While the files inside them differ (tailored towards the target group), the structure and the exploited vulnerability are the same. Note that the exploitation of this vulnerability is not exclusive to this campaign and was actively used by other threat actors in their attacks.
