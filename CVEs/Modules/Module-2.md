@@ -36,25 +36,25 @@ The executed script differs depending on the sample, but usually it searches for
 
 - Answer the questions.
 
-In which version of WinRAR was the vulnerability fixed? (format: x.xx )
+**In which version of WinRAR was the vulnerability fixed? (format: x.xx )**  
 `6.23`
 
-Provide one example of malware families that were distributed with the exploitation of this vulnerability.
+**Provide one example of malware families that were distributed with the exploitation of this vulnerability.**  
 `DarkMe`
 
-Who was the target group in this campaign?
+**Who was the target group in this campaign?**  
 
-Healthcare professionals and researchers
-**Traders, stock brokers, crypto-traders**
-Government agencies and military organizations
-Everyday computer users and gamers
+Healthcare professionals and researchers  
+**Traders, stock brokers, crypto-traders**  
+Government agencies and military organizations  
+Everyday computer users and gamers  
 
-How were the archives modified by the adversary to exploit the vulnerability?
+**How were the archives modified by the adversary to exploit the vulnerability?**  
 
-By adding additional metadata to the archive to mislead analysis tools
-By encrypting the archive to hide its true purpose
-**By including a directory and file with the same name and a trailing space**
-By altering the file permissions of the archive to grant unauthorized access
+By adding additional metadata to the archive to mislead analysis tools  
+By encrypting the archive to hide its true purpose  
+**By including a directory and file with the same name and a trailing space**  
+By altering the file permissions of the archive to grant unauthorized access  
 
 ## Examine the Sample
 
@@ -81,10 +81,10 @@ The analysis of the final payload (contents of the CAB SFX archive) is outside t
 
 ![Screenshot 2024-04-19 175539](https://github.com/acibojbp/RangeForce-Community/assets/164168280/1d742ac4-1bae-4c94-bc68-a52010909129)
 
-What is the filename of the BAT file that gets executed instead of the bait?
+**What is the filename of the BAT file that gets executed instead of the bait?**  
 `ReadMe.txt .cmd`
 
 ![Screenshot 2024-04-19 175643](https://github.com/acibojbp/RangeForce-Community/assets/164168280/29bcfbac-b25c-4811-943c-4bb889c62c41)
 
-What is the filename of the CAB SFX archive, executed by the BAT file? (format: `filename.extension` )
+**What is the filename of the CAB SFX archive, executed by the BAT file? (format: `filename.extension` )**  
 `weakicons.com`
