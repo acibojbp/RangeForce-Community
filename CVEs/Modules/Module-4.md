@@ -2,8 +2,27 @@
 
 Log4Shell is a remote code execution vulnerability affecting the Apache Log4j logging library versions 2.0 to 2.14.1. In this module, you will learn how the vulnerability works, attempt to exploit a vulnerable service and see how to detect and mitigate the issue in your own applications.
 
-CVSS Base Score: 10
+CVSS Base Score: 10  
 CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+
+## Contents
+- [Vulnerability Overview](#vulnerability-overview)
+   - [Log4j](#log4j)
+   - [JNDI and LDAP](#jndi-and-ldap)
+   - [User Input](#user-input)
+   - [Malicious LDAP Server](#malicious-ldap-server)
+   - [Insecure Deserialization](#insecure-deserialization)
+- [Practical Example](#practical-example)
+   - [Serve Payload](#serve-payload)
+   - [Exploit](#exploit)
+   - [Confirmation](#confirmation)
+- [Impact](#impact)
+- [Response](#response)
+   - [Identifying the Vulnerability](#identifying-the-vulnerability)
+   - [Patching](#patching)
+   - [Network Egress Filtering](#network-egress-filtering)
+   - [Exploitation Attempts](#exploitation-attempts)
+- [Review](#review)
 
 ## Vulnerability Overview
 
