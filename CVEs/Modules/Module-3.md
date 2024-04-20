@@ -20,7 +20,7 @@ Upon completion of this module, learners will be able to:
 - [Maldoc Analysis](#maldoc-analysis)
 - [Attack Chain Overview](#attack-chain-overview)
 - [Vulnerability Overview](#vulnerability-overview)
-- [Mitigation & Security Updates](#mitigation--security-updates)
+- [Mitigation & Security Updates](#mitigation-and-security-updates)
 
 ## <a name="campaign-and-threat-actor-overview"></a> Campaign and Threat Actor Overview
 
