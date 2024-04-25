@@ -12,9 +12,9 @@ _All information presented in this repository is sourced from the respective cou
 ## Contents
 
 [CVE Overview](./Modules/Module-1.md)  
-[CVE-2023-38831 WinRAR - Arbitrary Code Execution](./Modules/Module-2.md) 
-[CVE-2023-36884 Windows Search - Remote Code Execution](./Modules/Module-3.md) 
-[CVE-2021-44228 Log4Shell](./Modules/Module-4.md) 
+[CVE-2023-38831 WinRAR - Arbitrary Code Execution](./Modules/Module-2.md)  
+[CVE-2023-36884 Windows Search - Remote Code Execution](./Modules/Module-3.md)  
+[CVE-2021-44228 Log4Shell](./Modules/Module-4.md)  
 CVE-2021-34527 PrintNightmare  
 Conti Detection and Response  
 REvil Detection and Response  
